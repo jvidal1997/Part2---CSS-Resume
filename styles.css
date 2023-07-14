@@ -1,0 +1,120 @@
+/*I used @font-face to create font variables so that I could implement Poppins font.*/
+
+@font-face {
+    font-family: Poppins_Header;
+    src: url(./assets/Poppins/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Poppins_paragraph;
+    src: url(./assets/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins_bold;
+    src: url(./assets/Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: Poppins_b_italic;
+    src: url(./assets/Poppins/Poppins-LightItalic.ttf);
+}
+/* I used an asterisk selector to set all elements to border-box box-sizing.*/
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(0.33turn, cyan, rgb(130, 0, 117), cyan, rgb(130, 0, 117));
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+}
+
+article{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 20px;
+    padding: 25px;
+    z-index: 1000;
+}
+/* Here I used the animation property to animate shadows behind each section, as well as an {overflow: hidden} to remove any unwwated interactions between borders*/
+.section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 2px solid #000;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    padding: 0px;
+    width: 520px;
+    height: 350px;
+    background-color: rgb(255, 0, 162);
+    animation: spin 1000ms linear infinite;
+    overflow: hidden;
+} .section:hover{width: 550px; height: 375px;}
+/* Another animation property was implemented here to reverse the rotation of the section element, which gives the illusion of a net 0 rotation */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2{
+    position: relative;
+    font-family: Poppins_Header;
+    font-weight: 900;
+    font-size: 2em;
+    color:#fff;
+    text-shadow: 0 0 4px #000;
+    line-height: 50%;
+    text-align: center;
+}
+
+p{
+    position: relative;
+    font-family: Poppins_paragraph;
+    font-size: 14px;
+    text-align: left;
+}
+
+.text-center{
+    text-align: center;;
+}
+
+b{
+    font-family: Poppins_bold;
+}
+
+i{
+    font-family: Poppins_b_italic;
+    font-size: 12px;
+}
+
+a{
+    color: #4C5270;
+} a:hover{ /* Here I added a hover selector, which changes the color and font size of the element while the mouse is hovering over it */
+    color: #fff;
+    font-size: 15px;
+}
+
+aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: spin-reverse 1200ms linear infinite;
+    margin: 0;
+    padding: 0;
+}
+
+/* Below I used the @keyframes variable to create the rules for the rotating shadow animations */
+@keyframes spin {
+    0% {transform: rotate(0deg); box-shadow: 2px 0px 5px 2px #000;}
+    50% {transform: rotate(0deg); box-shadow: 0px 2px 5px 2px #000;}
+    100% {transform: rotate(0deg); box-shadow: 2px 0px 5px 2px #000;}
+}
